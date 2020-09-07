@@ -88,6 +88,8 @@
             </div>
         </div>
 
+
+
         <?php
 // This is a single-line comment
 
@@ -100,7 +102,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="/content/index.php" target="_blank">Conference Project</a>
+                <a href="content/index.php" target="_blank">Conference Project</a>
             </div>
         </div>
 
