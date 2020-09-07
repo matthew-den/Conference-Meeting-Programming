@@ -100,7 +100,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="home.php" target="_blank">Conference Project</a>
+                <a href="/content/index.php" target="_blank">Conference Project</a>
             </div>
         </div>
 
