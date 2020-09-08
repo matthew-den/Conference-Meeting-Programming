@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "conference";
+$dbname = "gtb";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -27,7 +27,6 @@ echo "Connected successfully!!!";
 
 <body>
     <script src=""></script>
-    <h1> Australian Financial Pathways Conference </h1>
 
 
 </body>

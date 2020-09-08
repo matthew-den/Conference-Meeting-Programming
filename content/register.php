@@ -1,5 +1,5 @@
 <?php include('server.php') ?>
-<? //include "../includes/conn.php"; //?>
+<?php //include "../includes/conn.php"; //?>
 
 <!DOCTYPE html>
 <html>

@@ -68,7 +68,7 @@
     <body>
 
         <div class="header">
-            <h2>Home Page</h2>
+            <h2>The Australian Financial Pathways Conference</h2>
         </div>
         <div class="content">
             <!-- notification message -->
