@@ -4,7 +4,9 @@ session_start();
 // initializing variables
 $username = "";
 $email    = "";
+$company  = "";
 $errors = array();
+$_SESSION['success'] = "";
 
 // connect to the database
 $db = mysqli_connect('localhost', 'root', '', 'gtb');
@@ -22,11 +24,12 @@ if (isset($_POST['reg_user'])) {
   // by adding (array_push()) corresponding error unto $errors array
   if (empty($username)) { array_push($errors, "Username is required"); }
   if (empty($email)) { array_push($errors, "Email is required"); }
+  if (empty($company)) { array_push($errors, "Company Information is required"); }
   if (empty($password_1)) { array_push($errors, "Password is required"); }
   if ($password_1 != $password_2) {
 	array_push($errors, "The two passwords do not match");
   }
-  if (empty($company)) { array_push($errors, "Company Information is required"); }
+
 
   // first check the database to make sure
   // a user does not already exist with the same username and/or email
@@ -48,8 +51,8 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO t_attendees (username, email, password, company)
-  			  VALUES('$username', '$email', '$password', '$company)";
+  	$query = "INSERT INTO t_attendees (username, email, company, password)
+  			  VALUES('$username', '$email', '$company', '$password')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
