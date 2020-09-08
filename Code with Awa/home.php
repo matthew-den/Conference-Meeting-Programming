@@ -12,6 +12,7 @@
   	header("location: login.php");
   }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -6,7 +6,7 @@
     <title>Australian Financial Pathways Conference</title>
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -29,5 +29,6 @@
     */
     ?>
 
+</body>
 
-    <main>
+</html>

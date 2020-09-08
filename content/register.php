@@ -1,4 +1,5 @@
 <?php include('server.php') ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -40,7 +41,7 @@
 
         <div class="input-group">
             <label>Company Information</label>
-            <input type="company" name="company" value="<?php echo $company; ?>">
+            <input type="text" name="company" value="<?php echo $company; ?>">
         </div>
 
         <div class="input-group">
