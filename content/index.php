@@ -26,16 +26,42 @@
 <body>
 
 
-    <h1>Topics and Speaker Information for the Financial Pathways Conference</h1>
-    <a href="showtopics.php">Go to the Topics and Speaker Information page</a>
+<?php   echo "<br>"; ?>
 
-    <h1>Schedule or Timetable for the Financial Pathways Conference</h1>
+    <h2>Topics and Speaker Information for the Financial Pathways Conference</h2>
+    <a href="showtopics.php">Topics of Presentations</a>
+    <a href="showtimetables.php">Timetables of Presentations</a>
+    <a href="register.php">Register to Attend Presentation</a>
+
+
+<?php   echo "<br>"; ?>
+
+Conference Program
+
+
+
+Admin Area
+Add a Topic
+Add a Speaker
+Add a Presentation
+Attendee Regostratopm
+
+Report Area
+List of Attendees by Presentation Timetable
+List of Speakers
+List of Topics
+List of Presentations Timetable
+
+
+
+
+    <h2>Schedule or Timetable for the Financial Pathways Conference</h2>
     <a href="showconference.php">Go to the Timetable and Topics page</a>
 
-    <h1>System Login for the Financial Pathways Conference</h1>
+    <h2>System Login for the Financial Pathways Conference</h2>
     <a href="login.php">Go to the Login page</a>
 
-    <h1>Attendee Registration for the Financial Pathways Conference</h1>
+    <h2>Attendee Registration for the Financial Pathways Conference</h2>
     <a href="register.php">Go to the Registration Form page</a>
 
     <p>The Australian Financial Pathways Conference presents you with the latest exciting developments in the world of finance. Network with your peers while you listen to renowned finance industry experts from around Australia and the world. Book early for the much anticipated ATO website workshop.</p>
