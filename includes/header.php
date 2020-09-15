@@ -15,6 +15,8 @@
         <p>Presented by GTB Financial Solutions<br>20 September 2017<br>Newcastle NSW Australia</p>
     </header>
 
+    <?php
+    /*
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
@@ -23,5 +25,5 @@
             <li><a href="admin.php">Admin</a></li>
         </ul>
     </nav>
-
-    <main>
+     */
+    ?>
