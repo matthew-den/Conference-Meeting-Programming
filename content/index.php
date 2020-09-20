@@ -28,7 +28,7 @@
     <?php   echo "<br>"; ?>
     <h3>Admin Area Link...</h3>
     <ul>
-        <li><a href="showtopics.php">Add a Topic</a></li>
+        <li><a href="addtopic.php">Add a Topic</a></li>
         <li><a href="showtopics.php">Add a Speaker</a></li>
         <li><a href="showtopics.php">Add a Venue</a></li>
         <li><a href="showtopics.php">Add a Presentation</a></li>

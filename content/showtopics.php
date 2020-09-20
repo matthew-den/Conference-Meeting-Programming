@@ -1,12 +1,13 @@
 <?php
 include "../includes/conn.php";
 include "../includes/header.php";
+?>
 
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "gtb";
-
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 ?>
@@ -55,7 +56,7 @@ $result=mysqli_query($conn,$sql);
 
     */?>
 
-    <html lang="">
+
 
     <head>
         <style>
@@ -89,16 +90,18 @@ $result=mysqli_query($conn,$sql);
         </style>
     </head>
 
-    <body>
-        <script src=""></script>
-        <h2>List of Topics for Presentations</h2>
 
-        <?php
+    <?php
 
     $sql = "SELECT topicID, topicTitle, topicDesc FROM t_topics;";
     $result = mysqli_query($conn,$sql);
 
     ?>
+    <html>
+
+    <body>
+        <script src=""></script>
+        <h2>List of Topics for Presentations</h2>
 
         <table id="customers">
             <tr>
@@ -106,8 +109,6 @@ $result=mysqli_query($conn,$sql);
                 <th>Topic Title</th>
                 <th>Topic Description</th>
             </tr>
-
-
 
             <?php while($row = mysqli_fetch_array($result)) {   ?>
             <tr>
@@ -119,9 +120,9 @@ $result=mysqli_query($conn,$sql);
 
             <?php    mysqli_close($conn);  ?>
 
-
             <hr style="width:200px" align="left">
             <p><a href="../content/index.php">Home</a></p>
     </body>
 
     </html>
+
