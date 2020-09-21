@@ -12,7 +12,7 @@
 <body>
     <header>
         <h1>Australian Financial Pathways Conference</h1>
-        <p>Presented by GTB Financial Solutions<br>20 September 2017<br>Newcastle NSW Australia</p>
+        <p>Presented by GTB Financial Solutions<br>20 September 2021<br>Newcastle NSW Australia</p>
     </header>
 
     <?php

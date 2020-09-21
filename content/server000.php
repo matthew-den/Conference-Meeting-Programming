@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+// connect to the database
+$db = mysqli_connect('localhost', 'root', '', 'gtb');
+
 // initializing variables
 $username = "";
 $email    = "";
@@ -8,8 +11,7 @@ $company  = "";
 $errors = array();
 $_SESSION['success'] = "";
 
-// connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'gtb');
+
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
