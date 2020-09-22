@@ -54,8 +54,8 @@ include('functions.php');
                 <small>
                     <i style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
                     <br>
-                    <a href="home.php?logout='1'" style="color: red;">logout</a>
-                    &nbsp; <a href="create_user.php"> + add user</a>
+                    <a href="admin_home.php" style="color: red;">logout</a>
+                    &nbsp; <a href="create_admin_user.php"> + add user</a>
                 </small>
 
                 <?php endif ?>
@@ -67,16 +67,6 @@ include('functions.php');
 
     <?php   echo "<br>"; ?>
 
-
-
-
-    <h3>Conference Program Link...</h3>
-    <ul>
-        <li><a href="showtopics.php"> Timetable of Presentations</a></li>
-        <li><a href="showtopics.php"> Attendee Signup</a></li>
-        <li><a href="showtopics.php"> Attendee Login</a></li>
-        <li><a href="showtopics.php"> Attendee Registration</a></li>
-    </ul>
     <?php   echo "<br>"; ?>
     <h3>Admin Area Link...</h3>
     <ul>
@@ -84,6 +74,7 @@ include('functions.php');
         <li><a href="showtopics.php">Add a Speaker</a></li>
         <li><a href="showtopics.php">Add a Venue</a></li>
         <li><a href="showtopics.php">Add a Presentation</a></li>
+        <li><a href="admin_home.php">Admin Home Page</a></li>
     </ul>
     <?php   echo "<br>"; ?>
 

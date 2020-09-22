@@ -105,6 +105,7 @@
                 <a href="content/index.php" target="_blank">Conference Project</a>
                 <a href="code_with_awa/index.php" target="_blank">Cold with Awa Login</a>
                 <a href="admin_and_user/index.php" target="_blank">Cold with Awa Admin and User Login</a>
+                <a href="bookshelf/index.php" target="_blank">Bookshelf Project</a>
             </div>
         </div>
 

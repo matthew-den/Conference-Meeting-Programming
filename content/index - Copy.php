@@ -32,10 +32,24 @@
 </ul>
 
 <?php   echo "<br>"; ?>
-<?php   echo "<br>"; ?>
 <h3>Admin Area Link...</h3>
 <ul>
+    <li><a href="addtopic.php">Add a Topic</a></li>
+    <li><a href="showtopics.php">Add a Speaker</a></li>
+    <li><a href="showtopics.php">Add a Venue</a></li>
+    <li><a href="showtopics.php">Add a Presentation</a></li>
     <li><a href="admin_home.php">Admin Home Page</a></li>
+</ul>
+<?php   echo "<br>"; ?>
+
+<h3>Reports Area...</h3>
+<ul>
+    <li><a href="showtopics.php">List of Topics</a></li>
+    <li><a href="showtopics.php">List of Speakers</a></li>
+    <li><a href="showtopics.php">List of Venue</a></li>
+    <li><a href="showtopics.php">List of Presentations in Timetalbe</a></li>
+    <li><a href="showtopics.php">List of Attendees</a></li>
+    <li><a href="showtopics.php">List of Attendees to Presentation</a></li>
 </ul>
 <?php   echo "<br>"; ?>
 
