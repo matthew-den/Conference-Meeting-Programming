@@ -143,9 +143,11 @@ include('functions.php');
     */
     ?>
 
-    <p> <a href="info/" target="_blank">Link to Infor</a> </p>
-    <hr style="width:200px" align="left">
-    <p> <a href="/">Home</a></p>
+<p> <a href="phpmyadmin" target="_blank">phpMyAdmin</a> </p>
+<p> <a href="phpinfo.php" target="blank">phpinfo</a></p>
+
+<hr style="width:200px" align="left">
+<p><a href="/">Home</a></p>
 
 </body>
 

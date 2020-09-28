@@ -14,7 +14,7 @@ session_start();
 */
 ?>
 
-<?php include "../includes/conn.php";
+<?php include "./includes/conn.php";
 
 $servername = "localhost";
 $username = "root";
@@ -50,12 +50,6 @@ mysqli_close($conn);
 
 <body>
     <script src=""></script>
-
-
-
-
-
-
 
 
 </body>
