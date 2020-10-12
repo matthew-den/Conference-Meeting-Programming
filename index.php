@@ -1,6 +1,7 @@
 <?php
 // include_once 'header.php';
    include "./includes/header.php";
+
    include('functions.php');
 
    	if (!isLoggedIn()) {
@@ -35,7 +36,7 @@
 <?php   echo "<br>"; ?>
 <h3>Admin Area Link...</h3>
 <ul>
-    <li><a href="admin_home.php">Admin Home Page</a></li>
+    <li><a href="./admin_home.php">Admin Home Page</a></li>
 </ul>
 <?php   echo "<br>"; ?>
 
