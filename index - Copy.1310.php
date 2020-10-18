@@ -1,7 +1,6 @@
 <?php
 // include_once 'header.php';
    include "./includes/header.php";
-
    include('functions.php');
 /*
    	if (!isLoggedIn()) {
@@ -54,65 +53,66 @@
                 <?php   echo "<br>"; ?>
                 <?php   echo "<br>"; ?>
                 <font color="#0142bc" size="6">Welcom to the GTB Financial Services Conference Conference</font><br>
-        
 
 
-        <p>The Australian Financial Pathways Conference presents you with the latest exciting developments in the world of finance. Network with your peers while you listen to renowned finance industry experts from around Australia and the world. Book early for the much anticipated ATO website workshop.</p>
-        <p>Take the time to enjoy the sweeping beaches and historic atmosphere of this vibrant regional city. Five excellent hotels are within walking distance of the conference venue.</p>
-        <p>Email us for a registration form and pay by the early bird deadline of 30 July to make big savings!</p>
-                
-                
-                
-                
 
-            <div class="header">
-                <h2>The Australian Financial Pathways Conference</h2>
-            </div>
+                <p>The Australian Financial Pathways Conference presents you with the latest exciting developments in the world of finance. Network with your peers while you listen to renowned finance industry experts from around Australia and the world. Book early for the much anticipated ATO website workshop.</p>
+                <p>Take the time to enjoy the sweeping beaches and historic atmosphere of this vibrant regional city. Five excellent hotels are within walking distance of the conference venue.</p>
+                <p>Email us for a registration form and pay by the early bird deadline of 30 July to make big savings!</p>
 
-            <div class="content">
-                <!-- notification message -->
-                <?php if (isset($_SESSION['success'])) : ?>
-                <div class="error success">
-                    <h3>
-                        <?php
+            </td>
+        </tr>
+    </table>
+    <p>&nbsp;</p>
+
+
+
+    <div class="header">
+        <h2>The Australian Financial Pathways Conference</h2>
+    </div>
+
+    <div class="content">
+        <!-- notification message -->
+        <?php if (isset($_SESSION['success'])) : ?>
+        <div class="error success">
+            <h3>
+                <?php
           	echo $_SESSION['success'];
           	unset($_SESSION['success']);
           ?>
-                    </h3>
-                </div>
+            </h3>
+        </div>
+        <?php endif ?>
+
+        <!-- logged in user information -->
+        <div class="profile_info">
+            <img src="./images/user_profile.png">
+
+            <div>
+                <?php  if (isset($_SESSION['user'])) : ?>
+                <strong><?php echo $_SESSION['user']['username']; ?></strong>
+
+                <small>
+                    <i style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
+                    <br>
+                    <a href="index.php?logout='1'" style="color: red;">logout</a>
+                </small>
+
                 <?php endif ?>
-
-                <!-- logged in user information -->
-                <div class="profile_info">
-                    <img src="./images/user_profile.png">
-
-                    <div>
-                        <?php  if (isset($_SESSION['user'])) : ?>
-                        <strong><?php echo $_SESSION['user']['username']; ?></strong>
-
-                        <small>
-                            <i style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
-                            <br>
-                            <a href="index.php?logout='1'" style="color: red;">logout</a>
-                        </small>
-
-                        <?php endif ?>
-                    </div>
-                </div>
+            </div>
+        </div>
 
 
-                <p> <a href="phpmyadmin" target="_blank">phpMyAdmin</a> </p>
-                <p> <a href="phpinfo.php" target="blank">phpinfo</a></p>
+        <p> <a href="phpmyadmin" target="_blank">phpMyAdmin</a> </p>
+        <p> <a href="phpinfo.php" target="blank">phpinfo</a></p>
 
-                <hr style="width:200px" align="left">
-                <p><a href="/">Home</a></p>
+        <hr style="width:200px" align="left">
+        <p><a href="/">Home</a></p>
 
-
-        </body>
+        <?php
+// include_once 'footer.php';
+include "./includes/footer.php"; ?>
+        
+</body>
 
 </html>
-
-<?php
-// include_once 'footer.php';
-include "./includes/footer.php";
-?>

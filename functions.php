@@ -25,7 +25,7 @@ $_SESSION['success'] = "";
 	if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['user']);
-		header("location: ../login.php");
+		header("location: ./login.php");
 	}
 
 	// REGISTER USER
@@ -126,7 +126,7 @@ $_SESSION['success'] = "";
 					$_SESSION['user'] = $logged_in_user;
 					$_SESSION['success']  = "You are now logged in";
 
-					header('location: index.php');
+					header('location: attendee_home.php');
 				}
 			}else {
 				array_push($errors, "Wrong username/password combination");

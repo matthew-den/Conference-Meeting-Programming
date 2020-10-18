@@ -1,8 +1,7 @@
 <?php
 // include_once 'header.php';
    include "./includes/header.php";
-
-   include('functions.php');
+   include('./functions.php');
 /*
    	if (!isLoggedIn()) {
 		$_SESSION['msg'] = "You must log in first";
@@ -104,10 +103,6 @@
             <?php endif ?>
         </div>
     </div>
-
-
-    <p> <a href="phpmyadmin" target="_blank">phpMyAdmin</a> </p>
-    <p> <a href="phpinfo.php" target="blank">phpinfo</a></p>
 
     <hr style="width:200px" align="left">
     <p><a href="/">Home</a></p>
