@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	// session_start();
 
 // connect to the database
 $db = mysqli_connect('localhost', 'root', '', 'gtb');
@@ -25,7 +25,7 @@ $_SESSION['success'] = "";
 	if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['user']);
-		header("location: ./login.php");
+		header("location: ../login.php");
 	}
 
 	// REGISTER USER
@@ -53,6 +53,8 @@ $_SESSION['success'] = "";
 			array_push($errors, "The two passwords do not match");
 		}
 
+        //Check exiting user information.
+
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
 			$password = md5($password_1);//encrypt the password before saving in the database
@@ -63,7 +65,7 @@ $_SESSION['success'] = "";
 						  VALUES('$username', '$email', '$user_type', '$password')";
 				mysqli_query($db, $query);
 				$_SESSION['success']  = "New user successfully created!!";
-				header('location: admin_home.php');
+				header('location: login.php');
 			}else{
 				$query = "INSERT INTO t_attendees (username, email, user_type, password)
 						  VALUES('$username', '$email', 'user', '$password')";
@@ -74,7 +76,7 @@ $_SESSION['success'] = "";
 
 				$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
 				$_SESSION['success']  = "You are now logged in";
-				header('location: index.php');
+				header('location: login.php');
 			}
 
 		}

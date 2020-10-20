@@ -1,5 +1,4 @@
 <?php
-   //include('server.php')
    include "./includes/header.php";
    include('functions.php');
 ?>
@@ -15,7 +14,7 @@
 <body>
 
     	<div class="header">
-		<h2>Login</h2>
+		<h2>Conference System Login</h2>
 	</div>
 
 	<form method="post" action="login.php">

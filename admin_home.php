@@ -96,8 +96,7 @@ include('functions.php');
     <p>Email us for a registration form and pay by the early bird deadline of 30 July to make big savings!</p>
 
 
-    <?php
-    /*
+
   session_start();
 
   if (!isset($_SESSION['username'])) {
@@ -109,11 +108,9 @@ include('functions.php');
   	unset($_SESSION['username']);
   	header("location: login.php");
   }
-  */
-?>
 
-    <?php
-    /*
+
+
 
     <div class="header">
         <h2>The Australian Financial Pathways Conference</h2>
@@ -140,8 +137,7 @@ include('functions.php');
     <?php endif ?>
     </div>
 
-    */
-    ?>
+
 
 <p> <a href="phpmyadmin" target="_blank">phpMyAdmin</a> </p>
 <p> <a href="phpinfo.php" target="blank">phpinfo</a></p>
