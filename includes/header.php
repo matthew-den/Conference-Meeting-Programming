@@ -40,10 +40,10 @@ session_start();
 
                 <td bgcolor="#f0ffe1" align="center" height="64" style="width: 628px">
                     <font color="#800000" size="5">
-                        <b>The Australia Financial Conference year of 2020<br>
+                        <b><br>The Australia Financial Conference year of 2020
                         </b>
                     </font>
-                    <font color="#104f76" size="4"><br>
+                    <font color="#104f76" size="3"><br>
                         The Australian Financial Pathways Conference presents you with the latest exciting developments in the world of finance. Network with your peers while you listen to renowned finance industry experts from around Australia and the world. Book early for the much anticipated ATO website workshop.
 
                         <p>Presented by GTB Financial Solutions<br>
