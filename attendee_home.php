@@ -6,15 +6,12 @@
 		$_SESSION['msg'] = "You must log in first";
 		header('location: login.php');
 	}
-
-
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <body>
-
 
     <div class="content">
         <!-- notification message -->
@@ -29,28 +26,12 @@
         </div>
         <?php endif ?>
 
-        <!-- logged in user information -->
-        <div class="profile_info">
-            <img src="./images/user_profile.png">
 
-            <div>
-                <?php  if (isset($_SESSION['user'])) : ?>
-                <strong><?php echo $_SESSION['user']['username']; ?></strong>
-
-                <small>
-                    <i style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
-                    <br>
-                    <a href="index.php?logout='1'" style="color: red;">logout</a>
-                </small>
-
-                <?php endif ?>
-            </div>
-        </div>
 
         <p style="text-align: center"><a name="home"></a>
             <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./index.php">Home</a>
             <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./login.php">Attendee Login</a>
-            <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./admin_home.php">Admin Login</a>
+            <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./login.php">Admin Login</a>
             <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./contact.php">Contact Us</a>
 
         <table width="70%" border="0" summary="" align="center">
@@ -61,6 +42,7 @@
             </tr>
         </table>
         <!-- end navigation -->
+
 
 
         <table border="1" summary="" width="80%" align="center">
@@ -84,14 +66,36 @@
                 <td style="width: 80%" colspan="2" align="center">
                     <?php   echo "<br>"; ?>
                     <?php   echo "<br>"; ?>
-                    <font color="#0142bc" size="6">Welcom to the GTB Financial Services Conference Conference</font><br>
+                    <font color="#0142bc" size="6">Attendee Area Link...</font><br>
 
+                    <?php   echo "<br>"; ?>
+                    <h3>Attendee Area Link...</h3>
+                    <ul>
+                        <li><a href="showpresentations.php">Show Presentations</a></li>
+                        <li><a href="showspeaker.php">Show Speakers</a></li>
+                        <li><a href="showvenue.php">Show Venues</a></li>
+                        <br>
+                        <li><a href="regform.php">Register Presentation Now !!!</a></li>
+                    </ul>
+                    <?php   echo "<br>"; ?>
 
+                    <!-- logged in user information -->
+                    <div class="profile_info">
+                        <img src="./images/user_profile.png" height="42" width="42">
 
-                    <p>The Australian Financial Pathways Conference presents you with the latest exciting developments in the world of finance. Network with your peers while you listen to renowned finance industry experts from around Australia and the world. Book early for the much anticipated ATO website workshop.</p>
-                    <p>Take the time to enjoy the sweeping beaches and historic atmosphere of this vibrant regional city. Five excellent hotels are within walking distance of the conference venue.</p>
-                    <p>Email us for a registration form and pay by the early bird deadline of 30 July to make big savings!</p>
+                        <div>
+                            <?php  if (isset($_SESSION['user'])) : ?>
+                            <strong><?php echo $_SESSION['user']['username']; ?></strong>
 
+                            <small>
+                                <i style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
+                                <br>
+                                <a href="index.php?logout='1'" style="color: red;">logout</a>
+                            </small>
+
+                            <?php endif ?>
+                        </div>
+                    </div>
 
                 </td>
             </tr>

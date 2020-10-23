@@ -1,13 +1,17 @@
 <?php
 // include_once 'header.php';
    include "./includes/header.php";
-include('functions.php');
-?>
+    include('functions.php');
 
+   	if (!isLoggedIn()) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+    }
+
+?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scal=1.0">
@@ -29,7 +33,6 @@ include('functions.php');
     <?php   echo "<br>"; ?>
     <h2>Welcom to the GTB Financial Services Conference Conference Admin - Home Page</h2>
 
-
     <div class="content">
         <!-- notification message -->
         <?php if (isset($_SESSION['success'])) : ?>
@@ -45,7 +48,7 @@ include('functions.php');
 
         <!-- logged in user information -->
         <div class="profile_info">
-            <img src="./images/admin_profile.png">
+            <img src="./images/admin_profile.png" height="42" width="42">
 
             <div>
                 <?php  if (isset($_SESSION['user'])) : ?>
@@ -70,22 +73,25 @@ include('functions.php');
     <?php   echo "<br>"; ?>
     <h3>Admin Area Link...</h3>
     <ul>
-        <li><a href="addtopic.php">Add a Topic</a></li>
-        <li><a href="showtopics.php">Add a Speaker</a></li>
-        <li><a href="showtopics.php">Add a Venue</a></li>
-        <li><a href="showtopics.php">Add a Presentation</a></li>
-        <li><a href="admin_home.php">Admin Home Page</a></li>
+        <li><a href="addtopicform.php">*Add a Topic*</a></li>
+        <li><a href="addspeakerform.php">*Add a Speaker*</a></li>
+        <li><a href="addvenueform.php">*Add a Venue*</a>
+            <li><a href="addpresentationform.php">*Add a Presentation*</a>
+        </li>
+
     </ul>
     <?php   echo "<br>"; ?>
 
     <h3>Reports Area...</h3>
     <ul>
+        <li><a href="showattendees.php">List of Attendees</a></li>
         <li><a href="showtopics.php">List of Topics</a></li>
-        <li><a href="showtopics.php">List of Speakers</a></li>
-        <li><a href="showtopics.php">List of Venue</a></li>
-        <li><a href="showtopics.php">List of Presentations in Timetalbe</a></li>
-        <li><a href="showtopics.php">List of Attendees</a></li>
-        <li><a href="showtopics.php">List of Attendees to Presentation</a></li>
+        <li><a href="showreg.php">List of Attendees and Presentations</a></li>
+
+        <br>
+        <li><a href="showspeaker.php">List of Speakers</a></li>
+        <li><a href="showpresentations.php">List of Presentations</a></li>
+        <li><a href="showvenue.php">List of Venues</a></li>
     </ul>
     <?php   echo "<br>"; ?>
 

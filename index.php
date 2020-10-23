@@ -12,7 +12,7 @@
     <p style="text-align: center"><a name="home"></a>
         <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./index.php">Home</a>
         <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./login.php">Attendee register or Login</a>
-        <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./admin_home.php">Admin Login</a>
+        <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./login.php">Admin Login</a>
         <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./contact.php">Contact Us</a>
 
     <table width="70%" border="0" summary="" align="center">
@@ -248,8 +248,8 @@ function showSlides(n) {
 
     <?php
 
-   include_once './includes/footer.php';
-//   include "./includes/footer.php";
+ //  include_once './includes/footer.php';
+  include "./includes/footer.php";
     ?>
 
 </body>

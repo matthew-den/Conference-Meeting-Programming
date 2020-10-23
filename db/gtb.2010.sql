@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2020 at 02:02 AM
+-- Generation Time: Oct 22, 2020 at 08:52 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -46,15 +46,21 @@ CREATE TABLE `t_admin` (
 
 CREATE TABLE `t_attendees` (
   `attendeeID` int(11) NOT NULL,
-  `attendeeAccount` varchar(16) COLLATE utf8_bin NOT NULL,
-  `passwd` varchar(64) COLLATE utf8_bin NOT NULL,
-  `firstName` varchar(32) COLLATE utf8_bin NOT NULL,
-  `lastName` varchar(32) COLLATE utf8_bin NOT NULL,
-  `phoneNum` varchar(16) COLLATE utf8_bin NOT NULL,
-  `email` varchar(64) COLLATE utf8_bin NOT NULL,
+  `username` varchar(100) COLLATE utf8_bin NOT NULL,
+  `email` varchar(100) COLLATE utf8_bin NOT NULL,
+  `password` varchar(100) COLLATE utf8_bin NOT NULL,
   `company` varchar(128) COLLATE utf8_bin NOT NULL,
-  `category` int(16) NOT NULL
+  `user_type` varchar(100) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `t_attendees`
+--
+
+INSERT INTO `t_attendees` (`attendeeID`, `username`, `email`, `password`, `company`, `user_type`) VALUES
+(28, 'John.Smith', 'John.Smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', '', 'admin'),
+(29, 'Mike.Smith', 'Mike.Smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', '', 'user'),
+(36, 'Tom.Smith', 'Tom.smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', '', 'user');
 
 -- --------------------------------------------------------
 
@@ -87,6 +93,13 @@ CREATE TABLE `t_speakers` (
   `phoneNum` varchar(16) COLLATE utf8_bin NOT NULL,
   `companyName` varchar(32) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `t_speakers`
+--
+
+INSERT INTO `t_speakers` (`speakerID`, `firstName`, `lastName`, `email`, `phoneNum`, `companyName`) VALUES
+(0, 'John', 'Alexander', 'john.alexander@generalbank.lab', '(09) 6765 6140', 'General Bank of Big Town');
 
 -- --------------------------------------------------------
 
@@ -156,7 +169,9 @@ ALTER TABLE `t_admin`
 -- Indexes for table `t_attendees`
 --
 ALTER TABLE `t_attendees`
-  ADD PRIMARY KEY (`attendeeID`);
+  ADD PRIMARY KEY (`attendeeID`),
+  ADD KEY `username` (`username`),
+  ADD KEY `username_2` (`username`);
 
 --
 -- Indexes for table `t_conference`
@@ -203,6 +218,12 @@ ALTER TABLE `t_venue`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `t_attendees`
+--
+ALTER TABLE `t_attendees`
+  MODIFY `attendeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `t_venue`

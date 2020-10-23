@@ -93,7 +93,7 @@ $result=mysqli_query($conn,$sql);
 
     <?php
 
-    $sql = "SELECT topicID, topicTitle, topicDesc FROM t_topics;";
+    $sql = "SELECT venueTitle, venueLocation, venueCapacity FROM t_venue;";
     $result = mysqli_query($conn,$sql);
 
     ?>
@@ -101,29 +101,29 @@ $result=mysqli_query($conn,$sql);
 
     <body>
         <script src=""></script>
-        <h2>List of Topics for Presentations</h2>
+        <h2>List Venues of the Conference</h2>
 
         <table id="customers">
             <tr>
-                <th>Topic ID</th>
-                <th>Topic Title</th>
-                <th>Topic Description</th>
+                <th>Venue Title</th>
+                <th>Venue Location</th>
+                <th>Venue Capacity</th>
             </tr>
 
             <?php while($row = mysqli_fetch_array($result)) {   ?>
             <tr>
-                <td><?php echo $row['topicID'];?></td>
-                <td><?php echo $row['topicTitle'];?></td>
-                <td><?php echo $row['topicDesc'];?></td>
+                <td><?php echo $row['venueTitle'];?></td>
+                <td><?php echo $row['venueLocation'];?></td>
+                <td><?php echo $row['venueCapacity'];?></td>
             </tr>
             <?php  }  ?>
 
-            <?php // header('location: attendee_home.php'); ?>
+            <?php  // header('location: attendee_home.php'); ?>
 
             <?php    mysqli_close($conn);  ?>
 
             <hr style="width:200px" align="left">
-            <p><a href="./admin_home.php">Admin_Home</a></p>
+            <p><a href="./attendee_home.php">Attendee_Home</a></p>
     </body>
 
     </html>

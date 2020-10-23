@@ -1,10 +1,6 @@
 
 -- Database: `gtb`
---
 
--- --------------------------------------------------------
-
---
 -- Table structure for table `t_admin`
 --
 
@@ -35,6 +31,22 @@ CREATE TABLE `t_attendees` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
+-- Table structure for table `t_conference`
+--
+
+CREATE TABLE `t_conference` (
+  `confID` int(11) NOT NULL,
+  `r_speakerID` int(11) NOT NULL,
+  `confTitle` varchar(64) COLLATE utf8_bin NOT NULL,
+  `confTheme` varchar(64) COLLATE utf8_bin NOT NULL,
+  `startTime` datetime NOT NULL,
+  `endTime` datetime NOT NULL,
+  `r_venueID` int(11) NOT NULL,
+  `detailInfo` text COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `t_speakers`
 --
@@ -48,6 +60,19 @@ CREATE TABLE `t_speakers` (
   `companyName` varchar(32) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+--
+-- Table structure for table `t_timetable`
+--
+
+CREATE TABLE `t_timetable` (
+  `timeTableID` int(11) NOT NULL,
+  `r_topicSpeakerID` int(11) NOT NULL,
+  `startTime` datetime NOT NULL,
+  `lectureOrder` int(11) NOT NULL,
+  `endTime` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 -- --------------------------------------------------------
 
 --
@@ -56,6 +81,7 @@ CREATE TABLE `t_speakers` (
 
 CREATE TABLE `t_topics` (
   `topicID` int(11) NOT NULL,
+  `r_confID` int(11) NOT NULL,
   `topicTitle` varchar(128) COLLATE utf8_bin NOT NULL,
   `topicDesc` varchar(512) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -66,32 +92,15 @@ CREATE TABLE `t_topics` (
 -- Table structure for table `t_topicspeakers`
 --
 
-CREATE TABLE `t_presentation` (
-  `presentationID` int(11) NOT NULL,
+CREATE TABLE `t_topicspeakers` (
+  `topicSpeakerID` int(11) NOT NULL,
+  `r_attendeeID` int(11) NOT NULL,
   `r_topicID` int(11) NOT NULL,
-  `r_venueID` int(11) NOT NULL,
-  `r_speakerID` int(11) NOT NULL,
   `lectureBrief` varchar(512) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
-CREATE TABLE `t_reg` (
-  `regID` int(11) NOT NULL,
-  `r_attendeeID` int(11) NOT NULL,
-  `r_presentationID` int(11) NOT NULL,
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
-
-CREATE TABLE `t_reg` (
-  `regID` int(11) NOT NULL,
-  `r_attendeeID` int(11) NOT NULL,
-  `r_presentationID` int(11) NOT NULL,
-  `r_lectureBrief` varchar(512) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `t_venue`
 --
 
@@ -101,6 +110,3 @@ CREATE TABLE `t_venue` (
   `venueLocation` varchar(512) COLLATE utf8_bin NOT NULL,
   `venueCapacity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
-
