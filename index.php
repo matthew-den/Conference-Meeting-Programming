@@ -6,6 +6,12 @@
 
 <!DOCTYPE html>
 <html>
+    <html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scal=1.0">
+    <title>The Australian Financial Pathways Conference Wetsite</title>
+    <link rel="stylesheet" type="text/css" href="./includes/style000.css">
 
 <body>
 
@@ -29,6 +35,7 @@
     <!-- DOCTYPE html>
 <!-- html-->
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {box-sizing: border-box}
@@ -136,27 +143,41 @@ img {vertical-align: middle;}
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="./images/img_nature_wide.jpg" style="width:100%">
+  <img src="./images/img_nature_wide.jpg" style="width:100%" alt="">
     <div class="text">"Maximise Profits"  --Speaker: Dr John Alexander <br>
         <p>  How to maximise profits on managed funds? </p>
         <p>In economics, profit maximization is the short run or long run process by which a firm may determine the price, input, and output levels that lead to the highest profit. Neoclassical economics, currently the mainstream approach to microeconomics, usually models the firm as maximizing profit.</p>
 
 There are several perspectives one can take on this problem. First, since profit equals revenue minus cost, one can plot graphically each of the variables revenue and cost as functions of the level of output and find the output level that maximizes the difference (or this can be done with a table of values instead of a graph). Second, if specific functional forms are known for revenue and cost in terms of output, one can use calculus to maximize profit with respect to the output level. Third, since the first order condition for the optimization equates marginal revenue and marginal cost, if marginal revenue (mr) and marginal cost(mc) functions in terms of output are directly available one can equate these, using either equations or a graph.<br>
         <br>
-
     </div>
+
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="./images/img_snow_wide.jpg" style="width:100%">
-  <div class="text">Enterprise Risk Management</div>
+  <img src="./images/img_snow_wide.jpg" style="width:100%" alt="">
+  <div class="text">"Enterprise Risk Management"  --Speaker: Dr Susan Taylor <br>
+        <p>  Explore opportunities to bridge and enhance risk </p>
+        <p>In economics, profit maximization is the short run or long run process by which a firm may determine the price, input, and output levels that lead to the highest profit. Neoclassical economics, currently the mainstream approach to microeconomics, usually models the firm as maximizing profit.</p>
+
+There are several perspectives one can take on this problem. First, since profit equals revenue minus cost, one can plot graphically each of the variables revenue and cost as functions of the level of output and find the output level that maximizes the difference (or this can be done with a table of values instead of a graph). Second, if specific functional forms are known for revenue and cost in terms of output, one can use calculus to maximize profit with respect to the output level. Third, since the first order condition for the optimization equates marginal revenue and marginal cost, if marginal revenue (mr) and marginal cost(mc) functions in terms of output are directly available one can equate these, using either equations or a graph.<br>
+        <br>
+    </div>
+
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="./images/img_mountains_wide.jpg" style="width:100%">
-  <div class="text">Stock Momentum</div>
+  <img src="./images/img_mountains_wide.jpg" style="width:100%" alt="">
+    <div class="text">"Stock Momentum"  --Speaker: Dr Louise Turner <br>
+        <p>  Measuring stock momentum for investments </p>
+        <p>In economics, profit maximization is the short run or long run process by which a firm may determine the price, input, and output levels that lead to the highest profit. Neoclassical economics, currently the mainstream approach to microeconomics, usually models the firm as maximizing profit.</p>
+
+There are several perspectives one can take on this problem. First, since profit equals revenue minus cost, one can plot graphically each of the variables revenue and cost as functions of the level of output and find the output level that maximizes the difference (or this can be done with a table of values instead of a graph). Second, if specific functional forms are known for revenue and cost in terms of output, one can use calculus to maximize profit with respect to the output level. Third, since the first order condition for the optimization equates marginal revenue and marginal cost, if marginal revenue (mr) and marginal cost(mc) functions in terms of output are directly available one can equate these, using either equations or a graph.<br>
+        <br>
+    </div>
+
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

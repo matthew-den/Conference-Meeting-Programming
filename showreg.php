@@ -83,6 +83,7 @@ Group By
 
 <body>
     <script src=""></script>
+    <html lang="en">
     <h2>List Presentations of Conferences</h2>
 
     <table id="customers">
