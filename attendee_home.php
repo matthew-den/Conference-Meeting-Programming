@@ -69,7 +69,7 @@
                     <font color="#0142bc" size="6">Attendee Area Link...</font><br>
 
                     <?php   echo "<br>"; ?>
-                    <h3>Attendee Area Link...</h3>
+
                     <ul>
                         <li><a href="showpresentations.php">Show Presentations</a></li>
                         <li><a href="showspeaker.php">Show Speakers</a></li>

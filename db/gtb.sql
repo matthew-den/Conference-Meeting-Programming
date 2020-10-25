@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2020 at 02:10 AM
+-- Generation Time: Oct 24, 2020 at 05:01 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -42,7 +42,8 @@ CREATE TABLE `t_attendees` (
 
 INSERT INTO `t_attendees` (`attendeeID`, `username`, `email`, `password`, `company`, `user_type`) VALUES
 (37, 'John.Smith', 'John.Smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', 'ABC of Australia', 'admin'),
-(38, 'Mike.Smith', 'Mike.Smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', 'ABC of Australia', 'user');
+(38, 'Mike.Smith', 'Mike.Smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', 'ABC of Australia', 'user'),
+(48, 'James.Smith', 'James.Smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', 'ABC of Australia', 'user');
 
 -- --------------------------------------------------------
 
@@ -54,17 +55,20 @@ CREATE TABLE `t_presentation` (
   `presentationID` int(11) NOT NULL,
   `r_topicID` int(11) NOT NULL,
   `r_venueID` int(11) NOT NULL,
-  `r_speakerID` int(11) NOT NULL,
-  `lectureBrief` varchar(512) COLLATE utf8_bin NOT NULL
+  `r_speakerID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `t_presentation`
 --
 
-INSERT INTO `t_presentation` (`presentationID`, `r_topicID`, `r_venueID`, `r_speakerID`, `lectureBrief`) VALUES
-(1, 3, 1, 2, 'presentation 1'),
-(2, 1, 2, 4, 'presentation 2');
+INSERT INTO `t_presentation` (`presentationID`, `r_topicID`, `r_venueID`, `r_speakerID`) VALUES
+(1, 1, 1, 2),
+(2, 2, 2, 4),
+(3, 5, 3, 5),
+(4, 3, 2, 4),
+(14, 6, 1, 2),
+(15, 7, 5, 6);
 
 -- --------------------------------------------------------
 
@@ -75,9 +79,24 @@ INSERT INTO `t_presentation` (`presentationID`, `r_topicID`, `r_venueID`, `r_spe
 CREATE TABLE `t_reg` (
   `regID` int(11) NOT NULL,
   `r_attendeeID` int(11) NOT NULL,
-  `r_presentationID` int(11) NOT NULL,
-  `r_lectureBrief` varchar(512) COLLATE utf8_bin NOT NULL
+  `r_presentationID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `t_reg`
+--
+
+INSERT INTO `t_reg` (`regID`, `r_attendeeID`, `r_presentationID`) VALUES
+(5, 37, 1),
+(6, 37, 1),
+(7, 37, 1),
+(8, 37, 2),
+(9, 37, 14),
+(12, 38, 3),
+(13, 38, 4),
+(14, 37, 15),
+(15, 37, 15),
+(16, 37, 2);
 
 -- --------------------------------------------------------
 
@@ -100,7 +119,9 @@ CREATE TABLE `t_speakers` (
 
 INSERT INTO `t_speakers` (`speakerID`, `firstName`, `lastName`, `email`, `phoneNum`, `companyName`) VALUES
 (2, 'John', 'Alexander', 'john.alexander@generalbank.lab', '(09) 6765 6140', 'General Bank of Big Town'),
-(4, 'Susan', 'Taylor', 'susan.taylor@goldencreditunion.lab', '(08) 5300 0383', 'Golden Credit Union Group');
+(4, 'Susan', 'Taylor', 'susan.taylor@goldencreditunion.lab', '(08) 5300 0383', 'Golden Credit Union Group'),
+(5, 'Chen', 'Zhijian', 'chen.zhijian@homeloansplus.lab', '(09) 9463 4973', 'Home Loans Plus'),
+(6, 'Oliver', 'Avery', 'oliver.avery@interbank.lab', '(09) 8510 7987', 'Interbank Group');
 
 -- --------------------------------------------------------
 
@@ -122,7 +143,9 @@ INSERT INTO `t_topics` (`topicID`, `topicTitle`, `topicDesc`) VALUES
 (1, 'Maximise Profits', 'How to maximise profits on managed funds'),
 (2, 'Minimise Tax', 'Minimising tax in the new environment'),
 (3, 'Forecasts', 'Economic forecasts'),
-(5, 'Stock Momentum', 'Measuring stock momentum');
+(5, 'Stock Momentum', 'Measuring stock momentum'),
+(6, 'Wealth Management', 'Client engagement in dynamic and complex wealth management'),
+(7, 'Enterprise Risk Management', 'Explore opportunities to bridge and enhance risk');
 
 -- --------------------------------------------------------
 
@@ -144,7 +167,8 @@ CREATE TABLE `t_venue` (
 INSERT INTO `t_venue` (`venueID`, `venueTitle`, `venueLocation`, `venueCapacity`) VALUES
 (1, 'Earth', '1 Floor', 60),
 (2, 'Mars', '2 Floor', 60),
-(3, 'Venus', '3 Floor', 100);
+(3, 'Venus', '3 Floor', 100),
+(5, 'Sun', '4 Floor', 40);
 
 --
 -- Indexes for dumped tables
@@ -201,31 +225,37 @@ ALTER TABLE `t_venue`
 -- AUTO_INCREMENT for table `t_attendees`
 --
 ALTER TABLE `t_attendees`
-  MODIFY `attendeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `attendeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `t_presentation`
 --
 ALTER TABLE `t_presentation`
-  MODIFY `presentationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `presentationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `t_reg`
+--
+ALTER TABLE `t_reg`
+  MODIFY `regID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `t_speakers`
 --
 ALTER TABLE `t_speakers`
-  MODIFY `speakerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `speakerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `t_topics`
 --
 ALTER TABLE `t_topics`
-  MODIFY `topicID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `topicID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `t_venue`
 --
 ALTER TABLE `t_venue`
-  MODIFY `venueID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `venueID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

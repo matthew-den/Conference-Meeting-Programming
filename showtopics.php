@@ -56,7 +56,9 @@ $result=mysqli_query($conn,$sql);
 
     */?>
 
+    <html>
 
+    <body>
 
     <head>
         <style>
@@ -97,9 +99,7 @@ $result=mysqli_query($conn,$sql);
     $result = mysqli_query($conn,$sql);
 
     ?>
-    <html>
 
-    <body>
         <script src=""></script>
         <h2>List of Topics for Presentations</h2>
 
@@ -122,9 +122,22 @@ $result=mysqli_query($conn,$sql);
 
             <?php    mysqli_close($conn);  ?>
 
+
+
+    <?php
+
+ //  include_once './includes/footer.php';
+  include "./includes/footer.php";
+    ?>
+
+
+
             <hr style="width:200px" align="left">
             <p><a href="./admin_home.php">Admin_Home</a></p>
-    </body>
+
+
+            </body>
 
     </html>
+
 

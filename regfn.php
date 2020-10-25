@@ -1,33 +1,8 @@
-<?php
-session_start();
-//include("./includes/conn.php");
-include "./includes/conn.php";
-var_dump($_POST);
-echo "<br>";
-print_r($_SESSION);
-echo "<br>";
-//
-$choice = $_POST['presentationID'];
-if(empty($choice))
-{
-echo("You didn't select any presentation.");
-}
-else
-{
-  $N = count($choice);
-
-echo("You selected $N presentation(s):");
-for($i=0; $i < $N; $i++)
-{
-echo($choice[$i]." ");
-}
-}
-?>
-
-
 
 <?php
-   include "./includes/header.php";
+//session_start();
+include "./includes/header.php";
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -36,28 +11,36 @@ $dbname = "gtb";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-// Escape user inputs for security
-//$presentationID=mysqli_real_escape_string($conn, $_REQUEST['presentationID']);
-$speakerID=mysqli_real_escape_string($conn, $_REQUEST['speaker']);
-$topicID=mysqli_real_escape_string($conn, $_REQUEST['topicTitle']);
-$venueID=mysqli_real_escape_string($conn, $_REQUEST['venue']);
+$choice = $_POST['presentationID'];
 
-//Attenmp insert query excution
-//$sql="INSERT INTO t_presentation (presentationID, r_speakerID, r_topicID, r_venueID) VALUES ('$presentationID','$speakerID','$topicID', '$venueID')";
+if(empty($choice))
+{
+    echo("You didn't select any presentation.");
+}
+else
+{
+    $N = count($choice);
 
-$sql="INSERT INTO t_presentation (r_speakerID, r_topicID, r_venueID) VALUES ('$speakerID','$topicID', '$venueID')";
+    $thevalues = "";
 
-if(mysqli_query($conn, $sql)){
-    echo "Records added Successfully.";
-}else{
-    echo "ERROR: Could not able to execute $sql.".mysql_error($db);
+    $thequery = ("INSERT INTO t_reg (r_presentationID, r_attendeeID) VALUES ");
+
+    for($i=0; $i < $N; $i++)
+    {
+    $thevalues .= ("(" . $choice[$i]  . ", " . $_SESSION['user']['attendeeID'] . ")," );
     }
-//close connection
-
-// header('location: admin_home.php');
+    $thequery .= rtrim($thevalues,",") . ";";
+    }
+    if(mysqli_query($conn, $thequery)){
+        echo "Records added successfully.";
+    }else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+}
 
 mysqli_close($conn);
-?>
+
+        ?>
+
 
 <!DOCTYPE html>
 <html lang="">
@@ -65,13 +48,13 @@ mysqli_close($conn);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a Topic</title>
+    <title>Register Presentation</title>
     <link rel="stylesheet" href="">
 </head>
 
 <body>
     <script src=""></script>
-     <p><a href="./admin_home.php">Admin_Home</a></p>
+    <p><a href="./attendee_home.php">Attendee_Home</a></p>
 </body>
 
 </html>

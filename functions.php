@@ -57,6 +57,7 @@ $_SESSION['success'] = "";
           if (isset($_POST['register_btn'])) {
   	$username = $_POST['username'];
   	$email = $_POST['email'];
+    //$company     =  $_POST['company'];
 
   	$sql_u = "SELECT * FROM t_attendees WHERE username='$username'";
   	$sql_e = "SELECT * FROM t_attendees WHERE email='$email'";
@@ -65,8 +66,10 @@ $_SESSION['success'] = "";
 
   	if (mysqli_num_rows($res_u) > 0) {
   	  $name_error = "Sorry... username already taken";
+        echo "<script type='text/javascript'>alert('$name_error');</script>";
   	}else if(mysqli_num_rows($res_e) > 0){
   	  $email_error = "Sorry... email already taken";
+        echo "<script type='text/javascript'>alert('$email_error');</script>";
   	}else{
 
 		// register user if there are no errors in the form
@@ -76,14 +79,14 @@ $_SESSION['success'] = "";
 
 			if (isset($_POST['user_type'])) {
 				$user_type = e($_POST['user_type']);
-				$query = "INSERT INTO t_attendees (username, email, user_type, password)
-						  VALUES('$username', '$email', '$user_type', '$password')";
+				$query = "INSERT INTO t_attendees (username, email, user_type, password, company)
+						  VALUES('$username', '$email', '$user_type', '$password', '$company')";
 				mysqli_query($db, $query);
 				$_SESSION['success']  = "New user successfully created!!";
 				header('location: login.php');
 			}else{
-				$query = "INSERT INTO t_attendees (username, email, user_type, password)
-						  VALUES('$username', '$email', 'user', '$password')";
+				$query = "INSERT INTO t_attendees (username, email, user_type, password, company)
+						  VALUES('$username', '$email', 'user', '$password', '$company')";
 				mysqli_query($db, $query);
 
 				// get id of the created user
@@ -106,7 +109,6 @@ $_SESSION['success'] = "";
 		global $db;
 		$query = "SELECT * FROM t_attendees WHERE id=" . $id;
 		$result = mysqli_query($db, $query);
-
 		$user = mysqli_fetch_assoc($result);
 		return $user;
 	}

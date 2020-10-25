@@ -13,8 +13,8 @@ $dbname = "gtb";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 ?>
 
-
-<head>
+<html>
+    <head>
     <style>
         #customers {
             font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -49,8 +49,6 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 <?php
 
-//    $sql = "SELECT r_topicID, r_speakerID, r_venueID, lectureBrief FROM t_presentation;";
-
 $sql = "Select
       t_topics.topicTitle,
       t_speakers.firstName,
@@ -69,11 +67,11 @@ $sql = "Select
 
     ?>
 
-<html>
+
 
 <body>
     <script src=""></script>
-    <h2>List Presentations of Conferences</h2>
+    <h2>List Presentations of Presentations</h2>
 
     <table id="customers">
         <tr>

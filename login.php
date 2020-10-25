@@ -1,6 +1,17 @@
 <?php
    include "./includes/header.php";
    include('functions.php');
+
+/*
+//echo $_SESSION['msg'];
+ if(!isset($_SESSION['msg'])){
+     if($_SESSION['msg']!=''){
+         $errorMessage=$_SESSION['msg'];
+    echo "<script type='text/javascript'>alert('$errorMessage');
+    </script>";
+     }
+    }
+    */
 ?>
 
 <!DOCTYPE html>

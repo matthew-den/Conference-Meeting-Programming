@@ -12,6 +12,7 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scal=1.0">
@@ -76,7 +77,7 @@
         <li><a href="addtopicform.php">*Add a Topic*</a></li>
         <li><a href="addspeakerform.php">*Add a Speaker*</a></li>
         <li><a href="addvenueform.php">*Add a Venue*</a>
-            <li><a href="addpresentationform.php">*Add a Presentation*</a>
+        <li><a href="addpresentationform.php">*Add a Presentation*</a>
         </li>
 
     </ul>
@@ -89,6 +90,7 @@
         <li><a href="showreg.php">List of Attendees and Presentations</a></li>
 
         <br>
+        <h3>Use back button!!...</h3>
         <li><a href="showspeaker.php">List of Speakers</a></li>
         <li><a href="showpresentations.php">List of Presentations</a></li>
         <li><a href="showvenue.php">List of Venues</a></li>

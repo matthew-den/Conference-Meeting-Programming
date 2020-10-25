@@ -1,14 +1,12 @@
-<?php
-/*
-  if (!isLoggedIn()){
-      $_SESSION['msg'] = "You must log in first";
-      header('location: login.php');
-    }
-  */
-?>
+
 
 <?php
 include "./includes/header.php";
+include('functions.php');
+if (!isLoggedIn()){
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+    }
 
 $servername = "localhost";
 $username = "root";
@@ -55,24 +53,6 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 <!-- The Query for Presentation to Register  -->
 
 <?php
-/*
-$sql = "Select
-      t_presentation.presentationID,
-      t_topics.topicTitle,
-      t_speakers.firstName,
-      t_speakers.lastName,
-      t_speakers.companyName,
-      t_venue.venueTitle,
-      t_venue.venueLocation
-    From
-  t_presentation Inner Join
-  t_topics On t_topics.topicID = t_presentation.r_topicID Inner Join
-  t_venue On t_venue.venueID = t_presentation.r_venueID Inner Join
-  t_speakers On t_speakers.speakerID = t_presentation.r_speakerID Inner Join
-  t_reg On t_presentation.presentationID = t_reg.r_presentationID Inner Join
-  t_attendees On t_attendees.attendeeID = t_reg.r_attendeeID;";
-*/
-
 
 $sql = "Select
   t_presentation.presentationID,
@@ -133,24 +113,22 @@ From
                 <small>
                     <i style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
                     <br>
-                    <a href="index.php" style="color: red;">logout</a>
+                    <a href="attendee_home.php?logout='1'" style="color: red;">logout</a>
                     &nbsp;
                 </small>
 
                 <?php endif ?>
             </div>
         </div>
-
     </div>
 
     <!-- The presentation to register form -->
 
     <h2> Presentation List and Information!</h2>
-
     <form method="post" action="regfn.php">
-
-        <table id="tabdiv1" border="1" cellspacing="0" cellpadding="3">
+    <table id="tabdiv1" border="1" cellspacing="0" cellpadding="3">
             <tr>
+                <th>Reg ID</th>
                 <th>Topic ID</th>
                 <th>Topic Title</th>
                 <th>Speaker FirstName</th>
@@ -158,12 +136,11 @@ From
                 <th>Speaker Company</th>
                 <th>Venue Information</th>
                 <th>Venue Location</th>
-
             </tr>
-
             <?php while($row = mysqli_fetch_array($result)) {   ?>
             <tr>
                 <td><input type="checkbox" name="presentationID[]" value="'<?php echo $row['presentationID'];?>'"></td>
+                <td><?php echo $row['presentationID'];?></td>
                 <td><?php echo $row['topicTitle'];?></td>
                 <td><?php echo $row['firstName'];?></td>
                 <td><?php echo $row['lastName'];?></td>
