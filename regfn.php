@@ -24,7 +24,6 @@ else
     $thevalues = "";
 
     $thequery = ("INSERT INTO t_reg (r_presentationID, r_attendeeID) VALUES ");
-
     for($i=0; $i < $N; $i++)
     {
     $thevalues .= ("(" . $choice[$i]  . ", " . $_SESSION['user']['attendeeID'] . ")," );

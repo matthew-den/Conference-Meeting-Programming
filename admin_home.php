@@ -58,7 +58,7 @@
                 <small>
                     <i style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
                     <br>
-                    <a href="index.php" style="color: red;">logout</a>
+                    <a href="logout.php" style="color: red;">logout</a>
                     &nbsp; <a href="create_admin_user.php"> + add user</a>
                 </small>
 
@@ -88,6 +88,7 @@
         <li><a href="showattendees.php">List of Attendees</a></li>
         <li><a href="showtopics.php">List of Topics</a></li>
         <li><a href="showreg.php">List of Attendees and Presentations</a></li>
+        <li><a href="showuserlog.php">List of User log</a></li>
 
         <br>
         <h3>Use back button!!...</h3>

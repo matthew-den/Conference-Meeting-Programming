@@ -1,3 +1,19 @@
-<?php    include "./includes/header.php";   ?>
+<?php    include "./includes/header.php"; ?>
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script src=""></script>
+</body>
+</html>
+
+
 
 <?php    include "./includes/footer.php";    ?>

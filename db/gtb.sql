@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2020 at 05:01 AM
+-- Generation Time: Nov 04, 2020 at 11:14 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -43,7 +43,9 @@ CREATE TABLE `t_attendees` (
 INSERT INTO `t_attendees` (`attendeeID`, `username`, `email`, `password`, `company`, `user_type`) VALUES
 (37, 'John.Smith', 'John.Smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', 'ABC of Australia', 'admin'),
 (38, 'Mike.Smith', 'Mike.Smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', 'ABC of Australia', 'user'),
-(48, 'James.Smith', 'James.Smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', 'ABC of Australia', 'user');
+(49, 'James.Smith', 'James.Smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', 'ABC of Australia', 'user'),
+(50, 'Leo.Smith', 'Leo.Smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', 'ABC of Australia', 'user'),
+(51, 'Tom.Smith', 'Tom.smith@hotmail.com', '2ac9cb7dc02b3c0083eb70898e549b63', 'ABC of Australia', 'user');
 
 -- --------------------------------------------------------
 
@@ -96,7 +98,13 @@ INSERT INTO `t_reg` (`regID`, `r_attendeeID`, `r_presentationID`) VALUES
 (13, 38, 4),
 (14, 37, 15),
 (15, 37, 15),
-(16, 37, 2);
+(16, 37, 2),
+(20, 49, 14),
+(21, 49, 15),
+(22, 38, 14),
+(23, 38, 15),
+(24, 51, 1),
+(25, 51, 14);
 
 -- --------------------------------------------------------
 
@@ -170,6 +178,55 @@ INSERT INTO `t_venue` (`venueID`, `venueTitle`, `venueLocation`, `venueCapacity`
 (3, 'Venus', '3 Floor', 100),
 (5, 'Sun', '4 Floor', 40);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userlog`
+--
+
+CREATE TABLE `userlog` (
+  `id` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `userName` varchar(500) COLLATE utf8_bin NOT NULL,
+  `loginTime` timestamp NOT NULL DEFAULT current_timestamp(),
+  `logoutTime` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `userlog`
+--
+
+INSERT INTO `userlog` (`id`, `userId`, `userName`, `loginTime`, `logoutTime`) VALUES
+(25, 37, 'John.Smith', '2020-11-03 00:33:34', '2020-11-03 00:33:44'),
+(27, 37, 'John.Smith', '2020-11-03 00:34:24', '2020-11-03 00:34:56'),
+(29, 38, 'Mike.Smith', '2020-11-03 00:35:21', '0000-00-00 00:00:00'),
+(30, 38, 'John.Smith', '2020-11-03 00:35:51', '0000-00-00 00:00:00'),
+(31, 37, 'Mike.Smith', '2020-11-03 00:36:26', '0000-00-00 00:00:00'),
+(33, 37, 'John.Smith', '2020-11-03 00:38:19', '2020-11-03 00:38:22'),
+(35, 37, 'John.Smith', '2020-11-03 00:39:24', '2020-11-03 00:39:27'),
+(36, 37, 'John.Smith', '2020-11-03 00:39:36', '0000-00-00 00:00:00'),
+(37, 37, 'James.Smith', '2020-11-03 00:41:15', '0000-00-00 00:00:00'),
+(39, 37, 'John.Smith', '2020-11-03 00:41:42', '0000-00-00 00:00:00'),
+(40, 37, 'John.Smith', '2020-11-03 00:43:35', '2020-11-03 00:45:24'),
+(41, 37, 'James.Smith', '2020-11-03 00:45:36', '0000-00-00 00:00:00'),
+(43, 50, 'Leo.Smith', '2020-11-03 00:47:22', '0000-00-00 00:00:00'),
+(45, 37, 'John.Smith', '2020-11-03 00:47:55', '2020-11-03 00:49:09'),
+(46, 37, 'Leo.Smith', '2020-11-03 00:49:56', '2020-11-03 00:49:59'),
+(63, 37, 'John.Smith', '2020-11-03 01:13:04', '0000-00-00 00:00:00'),
+(64, 37, 'John.Smith', '2020-11-03 01:13:23', '0000-00-00 00:00:00'),
+(65, 50, 'Leo.Smith', '2020-11-03 01:13:54', '2020-11-03 01:13:58'),
+(66, 37, 'John.Smith', '2020-11-03 01:14:06', '2020-11-03 01:14:21'),
+(67, 37, 'John.Smith', '2020-11-03 01:14:31', '0000-00-00 00:00:00'),
+(68, 51, 'Tom.Smith', '2020-11-03 01:15:47', '0000-00-00 00:00:00'),
+(69, 37, 'John.Smith', '2020-11-03 01:16:06', '2020-11-03 01:16:28'),
+(70, 51, 'Tom.Smith', '2020-11-03 01:16:39', '2020-11-03 01:16:42'),
+(71, 37, 'John.Smith', '2020-11-03 01:16:51', '2020-11-03 01:17:35'),
+(72, 37, 'John.Smith', '2020-11-03 01:17:46', '2020-11-03 01:19:22'),
+(73, 51, 'Tom.Smith', '2020-11-03 01:19:42', '2020-11-03 01:19:48'),
+(74, 37, 'John.Smith', '2020-11-03 01:19:57', '2020-11-03 01:20:25'),
+(75, 37, 'John.Smith', '2020-11-03 01:21:16', '2020-11-03 01:21:32'),
+(76, 37, 'John.Smith', '2020-11-04 00:07:05', '0000-00-00 00:00:00');
+
 --
 -- Indexes for dumped tables
 --
@@ -218,6 +275,13 @@ ALTER TABLE `t_venue`
   ADD PRIMARY KEY (`venueID`);
 
 --
+-- Indexes for table `userlog`
+--
+ALTER TABLE `userlog`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `userId` (`userId`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -225,7 +289,7 @@ ALTER TABLE `t_venue`
 -- AUTO_INCREMENT for table `t_attendees`
 --
 ALTER TABLE `t_attendees`
-  MODIFY `attendeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `attendeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `t_presentation`
@@ -237,7 +301,7 @@ ALTER TABLE `t_presentation`
 -- AUTO_INCREMENT for table `t_reg`
 --
 ALTER TABLE `t_reg`
-  MODIFY `regID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `regID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `t_speakers`
@@ -258,6 +322,12 @@ ALTER TABLE `t_venue`
   MODIFY `venueID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `userlog`
+--
+ALTER TABLE `userlog`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -275,6 +345,12 @@ ALTER TABLE `t_presentation`
 ALTER TABLE `t_reg`
   ADD CONSTRAINT `t_reg_ibfk_1` FOREIGN KEY (`r_presentationID`) REFERENCES `t_presentation` (`presentationID`),
   ADD CONSTRAINT `t_reg_ibfk_2` FOREIGN KEY (`r_attendeeID`) REFERENCES `t_attendees` (`attendeeID`);
+
+--
+-- Constraints for table `userlog`
+--
+ALTER TABLE `userlog`
+  ADD CONSTRAINT `userlog_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `t_attendees` (`attendeeID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

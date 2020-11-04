@@ -139,6 +139,14 @@ $_SESSION['success'] = "";
 			if (mysqli_num_rows($results) == 1) { // user found
 				// check if user is admin or user
 				$logged_in_user = mysqli_fetch_assoc($results);
+                //$row = mysqli_fetch_array($results);
+                $userId=$logged_in_user['attendeeID'];
+                $loginTime= date("Y-m-d h:i:sa");
+                $uip=$_SERVER['REMOTE_ADDR'];
+                $query = "insert into userlog(userId,userName,loginTime,logoutTime) values('".$userId."','".$username."','$loginTime','')";
+			    $results = mysqli_query($db, $query);
+                $last_id=mysqli_insert_id($db);
+                $_SESSION['lastedId']= $last_id;
 				if ($logged_in_user['user_type'] == 'admin') {
 
 					$_SESSION['user'] = $logged_in_user;
@@ -150,6 +158,8 @@ $_SESSION['success'] = "";
 
 					header('location: attendee_home.php');
 				}
+
+
 			}else {
 				array_push($errors, "Wrong username/password combination");
 			}

@@ -19,7 +19,7 @@
         <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./index.php">Home</a>
         <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./login.php">Attendee register or Login</a>
         <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./login.php">Admin Login</a>
-        <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./contact.php">Contact Us</a>
+        <img alt="" src="./images/bullet_p.gif" width="27" height="12" border="0"><a href="./emailform.php">Contact Us</a>
 
     <table width="70%" border="0" summary="" align="center">
         <tr>

@@ -1,0 +1,16 @@
+CREATE TABLE `t_attendees` (
+  `attendeeID` int(11) NOT NULL,
+  `username` varchar(100) COLLATE utf8_bin NOT NULL,
+  `email` varchar(100) COLLATE utf8_bin NOT NULL,
+  `password` varchar(100) COLLATE utf8_bin NOT NULL,
+  `company` varchar(128) COLLATE utf8_bin NOT NULL,
+  `user_type` varchar(100) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `userlog` (
+  `id` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `userIp` varbinary(16) NOT NULL,
+  `loginTime` timestamp NOT NULL DEFAULT current_timestamp(),
+  `logoutTime` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
